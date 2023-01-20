@@ -1,0 +1,57 @@
+.menu {
+	@media (max-width: $mob) {
+		position: fixed;
+		z-index: 10;
+		top: 0;
+		left: -100%;
+		width: 60%;
+		height: 100%;
+		padding: rem(120) rem(30) rem(30) rem(30);
+		background-color: var(--menu-bg);
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(40);
+		transition: left 0.5s ease;
+
+		@media (max-width: em(550)) {
+			width: 80%;
+		}
+		@media (max-width: em(450)) {
+			width: 100%;
+		}
+		.menu-open & {
+			left: 0;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(10);
+		flex: 1 1 auto;
+
+		@media (min-width: $mob) {
+			flex-direction: row;
+			column-gap: rem(20);
+		}
+	}
+
+	&__link {
+		font-weight: 500;
+		font-size: rem(20);
+		display: inline-block;
+		padding: rem(5) 0;
+		transition: color var(--anim);
+
+		&:hover {
+			color: var(--accent);
+		}
+		&:focus-visible {
+			@extend %focusVisible;
+		}
+
+		@media (min-width: $mob) {
+			font-size: rem(16);
+		}
+	}
+}

@@ -1,2 +1,19 @@
-@import './common';
-@import './example';
+@use "sass:math";
+
+/* Fonts */
+@import "./base/fonts";
+
+/* Icon Font */
+@import "./base/icons";
+
+/* Normalizing styles in the browser */
+@import "./base/normalize";
+
+// Utils
+@import "./utils/index";
+
+/* Components */
+@import "./components/index";
+
+// Header, Footer, Sections
+@import "./layout/index";

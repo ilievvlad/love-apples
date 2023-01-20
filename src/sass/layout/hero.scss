@@ -1,0 +1,150 @@
+.hero {
+	&__container {
+		padding-top: rem(50);
+		@media (min-width: $tab) {
+			display: flex;
+		}
+	}
+
+	&__content {
+		align-self: flex-start;
+		flex: 0 0 percent(500, 1270);
+	}
+
+	&__inner {
+		flex: 1 1 auto;
+		min-width: 0;
+		align-self: flex-end;
+		@media (max-width: $tab) {
+			margin: 0 rem(-15);
+		}
+	}
+}
+.content-hero {
+	position: relative;
+	z-index: 5;
+	background-color: rgba(255, 255, 255, 0.9);
+	@include adaptiveValue("padding-bottom", 60, 15);
+
+	@media (max-width: $tab) {
+		text-align: center;
+	}
+	@media (min-width: $tab) {
+		@include adaptiveValue("padding", 60, 15);
+	}
+	&__title {
+		@include adaptiveValue("font-size", 50, 30);
+		font-weight: 700;
+		margin-bottom: rem(20);
+
+		span {
+			@include adaptiveValue("font-size", 40, 25);
+			white-space: nowrap;
+		}
+	}
+
+	&__accent {
+		color: var(--accent);
+	}
+
+	&__text {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 20, 16);
+		line-height: 140%;
+		color: var(--gray);
+		margin-bottom: rem(50);
+
+		@media (max-width: em(515)) {
+			br {
+				display: none;
+			}
+		}
+	}
+
+	&__btn {
+	}
+}
+.button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 0 rem(70);
+	min-height: rem(50);
+	@include adaptiveValue("font-size", 24, 20);
+	font-weight: 600;
+	letter-spacing: rem(0.5);
+	background-color: var(--accent);
+	color: #ffffff;
+	position: relative;
+	transition: all var(--anim);
+
+	&:hover {
+		box-shadow: 0 0 rem(50) var(--accent);
+	}
+	&:focus-visible {
+		@extend %focusVisible;
+	}
+
+	@media (max-width: $tab) {
+		width: 60%;
+	}
+	@media (min-width: $mobSmall) {
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+	@media (max-width: $mobSmall) {
+		width: 100%;
+	}
+}
+.slider-hero {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: stretch;
+
+	@media (min-width: $tab) {
+		flex-direction: row-reverse;
+		align-items: flex-end;
+	}
+	&__controls {
+		position: relative;
+		z-index: 5;
+		align-self: stretch;
+
+		@media (max-width: $tab) {
+			margin: rem(10) 0 rem(20) 0;
+		}
+	}
+
+	&__slider-dotts {
+		@media (max-width: $tab) {
+			flex: 1 1 auto;
+			justify-content: center;
+		}
+	}
+
+	&__slider {
+		@media (min-width: $tab) {
+			@include adaptiveValue("width", 800, 300);
+		}
+	}
+
+	&__swiper {
+	}
+
+	&__slide {
+		position: relative;
+	}
+
+	&__img {
+		position: relative;
+		padding-bottom: 65%;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+.catalog {
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: rem(15);
+		width: 100%;
+		padding: rem(10) rem(20);
+		border-radius: rem(10);
+		border: rem(1) solid var(--accent);
+		font-weight: 500;
+		font-size: rem(20);
+		transition: all var(--anim);
+
+		&::before {
+			color: var(--accent);
+		}
+		&:focus-visible {
+			@extend %focusVisible;
+		}
+
+		@media (min-width: $mob) {
+			border: rem(1) solid #fff;
+			margin-bottom: 0;
+
+			&:hover {
+				border-color: var(--accent);
+				box-shadow: 0 0 rem(20) var(--accent);
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+.logo {
+	text-transform: uppercase;
+	font-weight: 700;
+	@include adaptiveValue("font-size", 26, 20);
+	white-space: nowrap;
+
+	span {
+		color: var(--accent);
+	}
+
+	&:focus-visible {
+		@extend %focusVisible;
+	}
+}
